@@ -33,3 +33,8 @@ const hello = <h1>Hello, World!</h1>
 //JSX-02
 const name = "Aida"
 const helloName = <h1>Hello, {name}</h1>
+
+
+/*JSX-03
+What happens if the `name` variable is not passed to the function?
+If the `name` variable is not passed into the fuction, it will not be displayed*/
