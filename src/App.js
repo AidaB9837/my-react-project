@@ -8,6 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>{hello}</h1>
         <h1>{helloName}</h1>
+        <h2>{sum}</h2>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -43,3 +44,9 @@ If the `name` variable is not passed into the fuction, it will not be displayed*
 /*JSX-04
 What happens if the `name` variable contains a JSX expression instead of a string?
 If the `name` variable contains a JSX expression instead of a string, it will not be rendered*/
+
+
+//JS-05
+const a = 15
+const b = 25
+const sum = <h2>The result is {a+b}</h2>
