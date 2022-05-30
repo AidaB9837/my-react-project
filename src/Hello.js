@@ -7,7 +7,7 @@ export class Hello extends React.Component {
         return (
             <>
                 <h1>Hello, World!</h1>
-                <p><Message /></p>
+                <Message />
             </>
         )
     }
