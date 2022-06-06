@@ -8,7 +8,7 @@ export class Welcome extends React.Component {
         return (
             <>
                 <p>Welcome, <strong>{this.props.name}</strong></p>
-                <Age age={24}/>
+                {this.props.age > 18  ?<Age age={this.props.age}/> : null} 
             </>
         )
     }
@@ -27,3 +27,5 @@ within a `p` tg after the message `"Your age is"`. SVOLTO ALLA RIGA 10*/
 
 /*Props-04: What happens if the `name` prop is a JSX expression instead of a string? How do you pass a prop that contains a JSX expression?
 Modify the value passed to the `name` prop so that it's contained within a `strong` tag. SVOLTO ALLA RIGA 10*/
+
+//Conditional Rendering-01: Modify the `Welcome` component so that the `Age` component is rendered only if the `age` prop is greater than `18`. SVOLTO ALLA RIGA 11.
