@@ -8,7 +8,7 @@ export class Welcome extends React.Component {
         return (
             <>
                 <p>Welcome, <strong>{this.props.name}</strong></p>
-                {this.props.age > 18  ?<Age age={this.props.age}/> : null} 
+                {this.props.age ? <Age age={this.props.age}/> : null} 
             </>
         )
     }
@@ -29,3 +29,5 @@ within a `p` tg after the message `"Your age is"`. SVOLTO ALLA RIGA 10*/
 Modify the value passed to the `name` prop so that it's contained within a `strong` tag. SVOLTO ALLA RIGA 10*/
 
 //Conditional Rendering-01: Modify the `Welcome` component so that the `Age` component is rendered only if the `age` prop is greater than `18`. SVOLTO ALLA RIGA 11.
+
+//Conditional Rendering-02: Modify the `Welcome` component so that the `Age` component is rendered only if the `age` prop is present. SVOLTO ALLA RIGA 11.
