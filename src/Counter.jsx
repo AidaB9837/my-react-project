@@ -5,7 +5,7 @@ The `Counter` component should render the `count` property within an `h1` tag, a
 
 export class Counter extends React.Component{
     state = {
-        count : 0
+        count : this.props.initialValue
     }
 
     constructor(props) {
@@ -13,9 +13,9 @@ export class Counter extends React.Component{
 
         setInterval(() => {
             this.setState({
-                count : this.state.count + 1
+                count : this.state.count + this.props.incrementAmount
             })
-        }, 1000)
+        }, this.props.incrementInterval)
     }
     render() {
         return <>
@@ -23,3 +23,15 @@ export class Counter extends React.Component{
                </>
     }
 }
+
+/*State 02: When calling `setState` to increment the counter, should the parameter be a function or an object?
+Why?*/
+
+/*State 03: Modify the `Counter` component so that the initial value of the counter, the increment interval and
+ the increment amount are passed as props to the component.*/
+
+ Counter.defaultProps = {
+    initialValue : 0,
+    incrementInterval : 1000,
+    incrementAmount : 1
+ }
