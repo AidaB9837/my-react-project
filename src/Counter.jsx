@@ -1,4 +1,5 @@
 import React from "react"
+import { CounterDisplay } from "./CounterDisplay"
 
 /*State 01: Create a `Counter` class component with an internal state containing a `count` property, initialized to `0`.
 The `Counter` component should render the `count` property within an `h1` tag, and the `count` property should be incremented by `1` every second;*/
@@ -19,7 +20,7 @@ export class Counter extends React.Component{
     }
     render() {
         return <>
-                    <h1> {this.state.count} </h1>
+                    <CounterDisplay count={this.state.count}/>
                </>
     }
 }
@@ -35,3 +36,6 @@ Why?*/
     incrementInterval : 1000,
     incrementAmount : 1
  }
+
+ /*State 05:Reset the counter to the initial value received as a prop when the value is greater than ten times
+ that initial value.*/
