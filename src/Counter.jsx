@@ -6,6 +6,8 @@ The `Counter` component should render the `count` property within an `h1` tag, a
 
 export class Counter extends React.Component{
 // Start Mounting Phase
+/*Component Lifecycle 01: Modify the `Counter` component so that the interval is initialized 
+ within the `componentDidMount` life cycle method instead of the constructor. Is the constructor still required? No*/
     state = {
         count: this.props.initialValue
     }
@@ -15,6 +17,13 @@ export class Counter extends React.Component{
         this.setState({
             count : this.state.count + this.props.incrementAmount
         }), this.props.incrementInterval)
+    }
+/*Component Lifecycle 02: Modify the `Counter` component so that the interval is cleared whenever the compnent is
+unmounted. What lifecycle method should you use?*/
+    componentWillUnmount() {
+        if (this._interval){
+            clearInterval(this._interval)
+        }
     }
 
     render() {
@@ -39,5 +48,3 @@ Why?*/
  /*State 05:Reset the counter to the initial value received as a prop when the value is greater than ten times
  that initial value.*/
 
- /*Component Lifecycle 01: Modify the `Counter` component so that the interval is initialized 
- within the `componentDidMount` life cycle method instead of the constructor. Is the constructor still required? No*/
