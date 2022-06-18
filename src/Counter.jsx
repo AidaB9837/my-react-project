@@ -13,16 +13,24 @@ export class Counter extends React.Component{
     }
 
     componentDidMount() {
-        this._interval = setInterval(() => 
+        this._interval = setInterval(() => {
         this.setState({
             count : this.state.count + this.props.incrementAmount
-        }), this.props.incrementInterval)
+        })
+        }, this.props.incrementInterval)
     }
 /*Component Lifecycle 02: Modify the `Counter` component so that the interval is cleared whenever the compnent is
-unmounted. What lifecycle method should you use?*/
+unmounted. What lifecycle method should you use? `componentWillUnmount`*/
     componentWillUnmount() {
         if (this._interval){
             clearInterval(this._interval)
+        }
+    }
+/*Component Lifecycle 03: Reset the counter to the initial value received as a prop when the value is greater than ten
+times that initial value. Do so in the `componentDidUpdate` lifecycle method.*/
+    componentDidUpdate(prevProps) {
+        if (this.state.count > this.props.initialValue*10) {
+            this.setState({count: prevProps.initialValue})
         }
     }
 
@@ -40,7 +48,7 @@ Why?*/
  the increment amount are passed as props to the component.*/
 
  Counter.defaultProps = {
-    initialValue : 0,
+    initialValue : 1,
     incrementInterval : 1000,
     incrementAmount : 1
  }
