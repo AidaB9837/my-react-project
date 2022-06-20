@@ -1,4 +1,5 @@
 import React from "react";
+import { CounterButton } from "./CounterButton";
 
 
 /*Events 01: Create a ClickCounter class component that increments a counter every time a user clicks on a button.
@@ -9,7 +10,7 @@ export class ClickCounter extends React.Component {
         count: this.props.initialValue
     }
 
-    handleCounterIncrement =() => {
+    handleCounterIncrement = () => {
         this.setState(state => {
             return {
                 count: state.count + this.props.incrementBy
@@ -20,7 +21,7 @@ export class ClickCounter extends React.Component {
     render() {
         return <>
                 <h1>Click Counter: {this.state.count}</h1>
-                <button onClick={this.handleCounterIncrement}>Increment</button>
+                <CounterButton click={this.handleCounterIncrement}/>
               </>
     }
 }
