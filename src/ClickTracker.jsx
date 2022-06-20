@@ -35,7 +35,7 @@ export class ClickTracker extends React.Component {
 */
 /*Events 04: Modifiy the `ClickTracker` so that each button contains an image instead of a text.
 How does this affect the event handler?
-Tramite event.currentTarget della function anotherTrackLastButton l'utente a ricevere info relative al button pressato.*/
+Tramite event.currentTarget.lastChild.alt della function anotherTrackLastButton l'utente riceverà info relative al button pressato.*/
         return <> 
         <h1>What was the last button pressed? {this.state.lastPressedButton}</h1>
         <button onClick={this.anotherTrackLastButton}><img src="https://qph.cf2.quoracdn.net/main-qimg-c4a8bb63f91785ded082be98fc8e1452-lq" alt="First"></img></button> 
