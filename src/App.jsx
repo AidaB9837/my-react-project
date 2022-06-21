@@ -4,6 +4,7 @@ import { ClickTracker } from "./ClickTracker";
 import { Counter } from "./Counter";
 import { Hello } from "./Hello"
 import { InteractiveWelcome } from "./InteractiveWelcome";
+import { Login } from "./Login";
 import { Welcome } from "./Welcome"
 
 //Components-03: Write a class component called App that renders the Hello component within a div tag.
@@ -15,7 +16,8 @@ export class App extends React.Component {
                     <Counter />  
                     <ClickCounter />  
                     <ClickTracker />  
-                    <InteractiveWelcome />            
+                    <InteractiveWelcome />   
+                    <Login />         
                 </div>        
     }
 }

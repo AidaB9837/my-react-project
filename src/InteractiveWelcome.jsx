@@ -7,26 +7,26 @@ The `input` tag should be a controlled component. */
 
 export class InteractiveWelcome extends React.Component {
     state = {
-        username: ""
+        name: ""
     }
 
     handleInputChange = (event) => {
         const value = event.target.value
 
         this.setState({
-            username: value
+            name: value
         })
     }
     render() {
         return <>
         <h1>First Form:</h1>
         <input 
-            name="username"
-            value={this.state.username}
+            name="name"
+            value={this.state.name}
             onChange={this.handleInputChange}
-            placeholder="Write something"
+            placeholder="Write your username"
             />
-        <Welcome name={this.state.username}/>
+        <Welcome name={this.state.name}/>
         </>
     }
 }
