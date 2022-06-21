@@ -7,7 +7,8 @@ export class Login extends React.Component {
     state = {
         username: "",
         password: "",
-        remember: false
+        remember: false,
+        disabled: true
     }
 
     handleInputChange = (event) => {
@@ -15,37 +16,60 @@ export class Login extends React.Component {
         const value = event.target.value
         const type = event.target.type
         const checked = event.target.checked
+        const username = this.state.username
+        const password = this.state.password
 
         this.setState({
             [name]: type === "checkbox" ? checked : value
         })
+
+        this.setState({
+            disabled: (username === "") && (password === "") ? true : false
+        })
     }
-    componentDidUpdate() {
+    onLogin = () => {
         console.log(this.state)
     }
-    
+
+
     render() {
         return <>
         <h1>Login Forms:</h1>
-        <input
-            name="username"
-            value={this.state.username}
-            onChange={this.handleInputChange}
-            placeholder="username"
-        /><br></br>
-        <input
-            name="password"
-            type="password"
-            value={this.state.password}
-            onChange={this.handleInputChange}
-            placeholder="password"
-        /> <br></br>
-        <input
-            name="remember"
-            type="checkbox"
-            checked={this.state.remember}
-            onChange={this.handleInputChange}
-        />
+        <div>
+            <button 
+            type="submit"
+            disabled={this.state.disabled}
+            onClick={this.onLogin}
+            >Login</button>
+        </div>
+        <div>
+            <input
+                name="username"
+                value={this.state.username}
+                onChange={this.handleInputChange}
+                placeholder="username"
+                required
+            /><br></br>
+            <input
+                name="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInputChange}
+                placeholder="password"
+                required
+            /> <br></br>
+            <p>Remember data?<input
+                name="remember"
+                type="checkbox"
+                checked={this.state.remember}
+                onChange={this.handleInputChange}
+            />
+            </p>
+            </div>
         </>
     }
 }
+
+/*Forms 03: Add a "login" `button` to the `Login` component. This button should be disabled as long as the `username` and `password` inputs
+are empty. When clicked, the event handler attached to the button should call an `onLogin` function passed as a prop 
+to the `Login` component, passing it the state. SVOLTO.*/
