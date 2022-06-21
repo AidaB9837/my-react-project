@@ -31,11 +31,28 @@ export class Login extends React.Component {
         console.log(this.state)
     }
 
+    handleResetState =() => {
+        this.setState({
+            username: "",
+            password: "",
+            remember: false
+        })
+    }
 
     render() {
         return <>
         <h1>Login Forms:</h1>
+{/* Forms 04: Add a "reset" `button` to the `Login` component that clears the content of all three inputs when clicked. */}
         <div>
+            <button 
+            onClick={this.handleResetState}>
+            Reset</button>
+
+        
+{/* Forms 03: Add a "login" `button` to the `Login` component. This button should be disabled as long as the `username` and `password` inputs
+are empty. When clicked, the event handler attached to the button should call an `onLogin` function passed as a prop 
+to the `Login` component, passing it the state.         */}
+        
             <button 
             type="submit"
             disabled={this.state.disabled}
@@ -69,7 +86,3 @@ export class Login extends React.Component {
         </>
     }
 }
-
-/*Forms 03: Add a "login" `button` to the `Login` component. This button should be disabled as long as the `username` and `password` inputs
-are empty. When clicked, the event handler attached to the button should call an `onLogin` function passed as a prop 
-to the `Login` component, passing it the state. SVOLTO.*/
