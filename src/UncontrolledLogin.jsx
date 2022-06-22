@@ -32,4 +32,4 @@ export class UncontrolledLogin extends React.Component {
 }
 
 /*Forms 06: Modify the UncontrolledLogin component so that the username input is automatically focused when the component
-renders the first time. */
+renders the first time. Svolto alla riga 24 usando la proprietà `autoFocus`.*/
