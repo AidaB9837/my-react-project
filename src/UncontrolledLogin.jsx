@@ -21,7 +21,7 @@ export class UncontrolledLogin extends React.Component {
         return <>
         <h1>Uncontrolled Login</h1>
         <form onSubmit={this.handleFormSubmit}>
-            <input name="username" placeholder="username"/> <br></br>
+            <input autoFocus name="username" placeholder="username" /> <br></br>
             <input name="password" type="password" placeholder="password"/><br></br>
             <input name="remember" type="checkbox"/><br></br>
 
@@ -30,3 +30,6 @@ export class UncontrolledLogin extends React.Component {
         </>
     }
 }
+
+/*Forms 06: Modify the UncontrolledLogin component so that the username input is automatically focused when the component
+renders the first time. */
