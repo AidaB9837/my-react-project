@@ -9,6 +9,13 @@ import { Login } from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome"
 
+const items = [
+    {id: 1, name: 'Red'},
+    {id: 2, name: 'Yellow'},
+    {id: 3, name: 'Green'},
+    {id: 4, name: 'Blue'}
+]
+
 //Components-03: Write a class component called App that renders the Hello component within a div tag.
 export class App extends React.Component {
     render() {
@@ -21,7 +28,7 @@ export class App extends React.Component {
                     <InteractiveWelcome />   
                     <Login />  
                     <UncontrolledLogin />
-                    <Colors colors={['Red', 'Yellow', 'Green', 'Blue']}/>       
+                    <Colors colors={items}/>       
                 </div>        
     }
 }
