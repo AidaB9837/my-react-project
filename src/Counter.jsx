@@ -35,9 +35,17 @@ times that initial value. Do so in the `componentDidUpdate` lifecycle method.*/
     }
 
     render() {
-        return <>
+/*Styling Components 02: Modify the `Counter` component from 7.1 by styling the counter display using an inline `style` attribute.*/
+        const CounterStyle = {
+            color: "#0000ff",
+            backgroundColor: "#add8e6",
+            border: "1px solid #0000ff",
+            borderRadius: "10px"
+        }
+
+        return <div style={CounterStyle}>
                     <CounterDisplay count={this.state.count}/>
-               </>
+               </div>
     }
 }
 
