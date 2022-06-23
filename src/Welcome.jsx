@@ -6,10 +6,10 @@ Render this component to you `App` component, passing it a `name` prop of your c
 export class Welcome extends React.Component {
     render() {
         return (
-            <>
+            <div className="welcome">
                 <p>Welcome, <strong>{this.props.name}</strong></p>
                 {this.props.age > 18 && this.props.age < 65 && this.props.name === 'John' ? <Age age={this.props.age}/> : null} 
-            </>
+            </div>
         )
     }
 }
