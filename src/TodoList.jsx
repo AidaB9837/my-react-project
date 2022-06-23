@@ -25,7 +25,7 @@ export class TodoList extends React.Component {
         
     }
 
-    handleClearList = (event) => {
+    handleClearList = () => {
         this.setState({
             items: [],
             content: ""
@@ -33,9 +33,9 @@ export class TodoList extends React.Component {
     }
     
     handleRemoveItem = (event) => {
-        const removeItem = event.target.previousSibling.textContent
+        const removeItem = event.target.previousSibling.previousSibling.textContent
         this.setState((state) => ({
-            items: this.state.items.filter((item) => item !== removeItem)
+            items: state.items.filter((item) => item !== removeItem)
         }))
         console.log(event.target)
     }
