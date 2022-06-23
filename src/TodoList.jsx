@@ -39,23 +39,26 @@ export class TodoList extends React.Component {
         }))
         console.log(event.target)
     }
-
+/*Styling Components 04: Install the `tailwindcss` package and use it to style the `TodoList` component. */
     render() {
-        return <>
-                <h1>Todo List:</h1>
-                <ul>
-                    {this.state.items.map((content, index) => <li key={content + index}>{content} <button onClick={this.handleRemoveItem}>Remove Todo</button> </li>)}
+        return <div className="w-fit bg-cyan-50 border border-slate-300 rounded-md">
+                <h1 className="text-3xl font-bold underline border border-slate-300 rounded-md">Todo List:</h1>
+                <ul className="italic text-lg">
+                    {this.state.items.map((content, index) => <li key={content + index}>{content} <button className="border border-slate-300 bg-indigo-300 rounded-md text-sm" onClick={this.handleRemoveItem}>Remove Todo</button> </li>)}
                 </ul>
                 <div>
-                    <input type="text"
+                    <input 
+                    className="border border-slate-300 rounded-md"
+                    type="text"
                     value={this.state.content}
                     onChange={this.handleInputChange}>
+                    
                     </input>
-                    <button onClick={this.handleAddNewItem}>Add</button>
+                    <button className="border border-slate-300 bg-teal-400 rounded-md" onClick={this.handleAddNewItem}>Add</button>
 {/* Lists 05: Modify the `TodoList` by adding a "reset" `button` that clears the `items` array when clicked */}
-                    <button onClick={this.handleClearList}>Reset</button>
+                    <button className="border border-slate-300 bg-red-400 rounded-md" onClick={this.handleClearList}>Reset</button>
                 </div>
-               </>
+               </div>
     }
 }
 
