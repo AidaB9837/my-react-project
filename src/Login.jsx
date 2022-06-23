@@ -44,7 +44,8 @@ export class Login extends React.Component {
 password's length is shorter than 8 characters, green otherwise.*/
         const PasswordLength = this.state.password.length
         const LoginButtonStyle = {
-            backgroundColor: PasswordLength < 8 ? "red" : "green"
+            backgroundColor: PasswordLength < 8 ? "red" : "green",
+            color: PasswordLength < 8 ? "white" : "black"
         }
 
         return <>
