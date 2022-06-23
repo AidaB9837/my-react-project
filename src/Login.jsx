@@ -40,6 +40,13 @@ export class Login extends React.Component {
     }
 
     render() {
+/*Styling Components 03: Modify the `Login` component from 8.3 so that the "login" `button` background color is "red" when the inputted 
+password's length is shorter than 8 characters, green otherwise.*/
+        const PasswordLength = this.state.password.length
+        const LoginButtonStyle = {
+            backgroundColor: PasswordLength < 8 ? "red" : "green"
+        }
+
         return <>
         <h1>Login Forms:</h1>
 {/* Forms 04: Add a "reset" `button` to the `Login` component that clears the content of all three inputs when clicked. */}
@@ -54,6 +61,7 @@ are empty. When clicked, the event handler attached to the button should call an
 to the `Login` component, passing it the state.         */}
         
             <button 
+            style={LoginButtonStyle}
             type="submit"
             disabled={this.state.disabled}
             onClick={this.onLogin}
