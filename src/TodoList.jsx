@@ -24,12 +24,27 @@ export class TodoList extends React.Component {
         this.setState({content: ""})
         
     }
+
+    handleClearList = (event) => {
+        this.setState({
+            items: [],
+            content: ""
+        })
+    }
     
+    handleRemoveItem = (event) => {
+        const removeItem = event.target.previousSibling.textContent
+        this.setState((state) => ({
+            items: this.state.items.filter((item) => item !== removeItem)
+        }))
+        console.log(event.target)
+    }
+
     render() {
         return <>
                 <h1>Todo List:</h1>
                 <ul>
-                    {this.state.items.map((content, index) => <li key={content + index}>{content}</li>)}
+                    {this.state.items.map((content, index) => <li key={content + index}>{content} <button onClick={this.handleRemoveItem}>Remove Todo</button> </li>)}
                 </ul>
                 <div>
                     <input type="text"
@@ -37,7 +52,13 @@ export class TodoList extends React.Component {
                     onChange={this.handleInputChange}>
                     </input>
                     <button onClick={this.handleAddNewItem}>Add</button>
+{/* Lists 05: Modify the `TodoList` by adding a "reset" `button` that clears the `items` array when clicked */}
+                    <button onClick={this.handleClearList}>Reset</button>
                 </div>
                </>
     }
 }
+
+/*Lists 04: Modify the `TodoList` component so that the input clears very time a Todo is added to the `items` array.(?????)*/
+/*Lists 06: Modify the `TodoList` by adding a "remove" `button` to each `li` tag. When clicked, the event handler should remove
+corresponding item from the `items` array. Da 35-39, ma non mi convince.*/
