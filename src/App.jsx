@@ -31,7 +31,21 @@ export class App extends React.Component {
                     <Login />  
                     <UncontrolledLogin />
                     <Colors colors={items}/>    
-                    <TodoList />   
+                    <TodoList 
+                    render={(items) =>{
+                        return (
+                            <div>
+                                <ul className="italic text-lg">
+                                {items.map((content, index) => (
+                                    <div>
+                                        <li key={content + index}>{content}</li> <button className="border border-slate-300 bg-indigo-300 rounded-md text-sm" onClick={this.handleRemoveItem}>Remove Todo</button>
+                                        
+                                    </div>
+                                ))}
+                            </ul> 
+                        </div>
+                    )}}
+                    ></TodoList>
                     <Container title={<h1>Container</h1>}/>
                 </div>        
     }

@@ -43,20 +43,23 @@ export class TodoList extends React.Component {
     render() {
         return <div className="w-fit bg-cyan-50 border border-slate-300 rounded-md">
                 <h1 className="text-3xl font-bold underline border border-slate-300 rounded-md">Todo List:</h1>
-                <ul className="italic text-lg">
-                    {this.state.items.map((content, index) => <li key={content + index}>{content} <button className="border border-slate-300 bg-indigo-300 rounded-md text-sm" onClick={this.handleRemoveItem}>Remove Todo</button> </li>)}
-                </ul>
                 <div>
+{/* Render Props 01: Modify the `TodoList` component so that, instead of rendering the `items` array within the `ul` tag, 
+it calls the function passed to its `render` prop, passing it the `items` array as a parameter, as well as the function required 
+to delete the item. Pass a render prop to the `TodoList` component to correctly render and interact with the `items` array. */}
+                    {this.props.render(this.state.items)} 
+                    
                     <input 
                     className="border border-slate-300 rounded-md"
                     type="text"
                     value={this.state.content}
                     onChange={this.handleInputChange}>
-                    
                     </input>
+
                     <button className="border border-slate-300 bg-teal-400 rounded-md" onClick={this.handleAddNewItem}>Add</button>
 {/* Lists 05: Modify the `TodoList` by adding a "reset" `button` that clears the `items` array when clicked */}
                     <button className="border border-slate-300 bg-red-400 rounded-md" onClick={this.handleClearList}>Reset</button>
+
                 </div>
                </div>
     }
