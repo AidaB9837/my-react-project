@@ -9,6 +9,7 @@ import { Login } from "./Login";
 import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome"
+import { Container } from "./Container"
 
 const items = [
     {id: 1, name: 'Red'},
@@ -31,6 +32,7 @@ export class App extends React.Component {
                     <UncontrolledLogin />
                     <Colors colors={items}/>    
                     <TodoList />   
+                    <Container />
                 </div>        
     }
 }
