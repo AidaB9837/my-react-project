@@ -32,7 +32,7 @@ export class App extends React.Component {
                     <UncontrolledLogin />
                     <Colors colors={items}/>    
                     <TodoList />   
-                    <Container />
+                    <Container title={<h1>Container</h1>}/>
                 </div>        
     }
 }
