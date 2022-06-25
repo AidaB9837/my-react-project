@@ -47,7 +47,9 @@ export class TodoList extends React.Component {
 {/* Render Props 01: Modify the `TodoList` component so that, instead of rendering the `items` array within the `ul` tag, 
 it calls the function passed to its `render` prop, passing it the `items` array as a parameter, as well as the function required 
 to delete the item. Pass a render prop to the `TodoList` component to correctly render and interact with the `items` array. */}
-                    {this.props.render(this.state.items)} 
+{/* Render Props 02: Change the `TodoList` component so that instead of using the `render` prop it uses the `children` prop.
+How does this affect the component in which the `TodoList` component is rendered? */}
+                    {this.props.children(this.state.items)} 
                     
                     <input 
                     className="border border-slate-300 rounded-md"
