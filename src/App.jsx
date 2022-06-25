@@ -11,6 +11,7 @@ import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome"
 import { Container } from "./Container"
 import { LanguageContext } from "./LanguageContext";
+import { DisplayLanguage } from "./DisplayLanguage";
 
 const items = [
     {id: 1, name: 'Red'},
@@ -37,6 +38,8 @@ export class App extends React.Component {
                         <option value="it">Italiano</option>
                     </select>
                     <LanguageContext.Provider value={this.state.language}>
+                        <DisplayLanguage />
+                    </LanguageContext.Provider>
                         <Hello />
                         <Welcome name="Jacopo" age={24}/>
                         <Counter />  
@@ -62,7 +65,6 @@ export class App extends React.Component {
                             )}}
                         </TodoList>
                         <Container title={<h1>Container</h1>}/>
-                    </LanguageContext.Provider>
                     
                 </div>        
     }
