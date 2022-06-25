@@ -12,6 +12,7 @@ import { Welcome } from "./Welcome"
 import { Container } from "./Container"
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
+import { Sum } from "./Sum";
 
 const items = [
     {id: 1, name: 'Red'},
@@ -32,7 +33,7 @@ export class App extends React.Component {
         })
     }
     render() {
-        return <div>
+        return <div>      
                     <select value={this.state.language} onChange={this.handleLanguageChange}>
                         <option value="en">English</option>
                         <option value="it">Italiano</option>
@@ -65,7 +66,7 @@ export class App extends React.Component {
                             )}}
                         </TodoList>
                         <Container title={<h1>Container</h1>}/>
-                    
+                        <Sum number={[1,2,3,4,5]}/>         
                 </div>        
     }
 }
