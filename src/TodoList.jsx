@@ -43,7 +43,7 @@ export class TodoList extends React.Component {
     render() {
         return <div className="w-fit bg-cyan-50 border border-slate-300 rounded-md">
                 <h1 className="text-3xl font-bold underline border border-slate-300 rounded-md">Todo List:</h1>
-                <div>
+                <div onClick={this.handleRemoveItem}>
 {/* Render Props 01: Modify the `TodoList` component so that, instead of rendering the `items` array within the `ul` tag, 
 it calls the function passed to its `render` prop, passing it the `items` array as a parameter, as well as the function required 
 to delete the item. Pass a render prop to the `TodoList` component to correctly render and interact with the `items` array. */}
