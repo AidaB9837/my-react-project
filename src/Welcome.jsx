@@ -3,15 +3,25 @@ import { Age } from './Age'
 
 /*Props-01: Create a `Welcome` class component that receives a `name` prop and renders the `Welcome {name}!` message within a `p` tag.
 Render this component to you `App` component, passing it a `name` prop of your choosing.*/
-export class Welcome extends React.Component {
-    render() {
-        return (
-            <div className="welcome">
-                <p>Welcome, <strong>{this.props.name}</strong></p>
-                {this.props.age > 18 && this.props.age < 65 && this.props.name === 'John' ? <Age age={this.props.age}/> : null} 
-            </div>
-        )
-    }
+// export class Welcome extends React.Component {
+//     render() {
+//         return (
+//             <div className="welcome">
+//                 <p>Welcome, <strong>{this.props.name}</strong></p>
+//                 {this.props.age > 18 && this.props.age < 65 && this.props.name === 'John' ? <Age age={this.props.age}/> : null} 
+//             </div>
+//         )
+//     }
+// }
+
+/*Function Components 01: Rewrite the `Welcome` component to be a function component.*/
+export function Welcome(props) {
+    return (
+        <div className="welcome">
+                 {props.name && <p>Welcome, <strong>{props.name}</strong></p>}
+                 {props.age > 18 && props.age < 65 && props.name === 'John' ? <Age age={props.age}/> : null} 
+             </div>
+    )
 }
 
 /*Props-02: What happens if no `name` prop is passed to the `Welcome` component?
