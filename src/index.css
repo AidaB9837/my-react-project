@@ -1,6 +1,6 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
 
 /*Styling Components 01: Create an `index.css` file and import it within the `index.js` file. 
 Add a `.welcome` class to the `Welcome` component that changes its background color and adds a border.*/
