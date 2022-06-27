@@ -21,6 +21,10 @@ const items = [
     {id: 4, name: 'Blue'}
 ]
 
+function onCounterChange(count){
+    console.log(`The Counter is now: ${count}`)
+}
+
 //Components-03: Write a class component called App that renders the Hello component within a div tag.
 export class App extends React.Component {
     state = {
@@ -44,7 +48,7 @@ export class App extends React.Component {
                         <Hello />
                         <Welcome name="Jacopo" age={24}/>
                         <Counter />  
-                        <ClickCounter />  
+                        <ClickCounter initialValue={0} onCounterChange={onCounterChange}/>  
                         <ClickTracker />  
                         <InteractiveWelcome />   
                         <Login />  

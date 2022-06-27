@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { CounterButton } from "./CounterButton";
 
 
@@ -35,8 +35,15 @@ Render both the current value of the counter and the button within the ClickCoun
 /*useState 01: Rewrite the `Counter` component from Events 01 as a function component, 
 and use the `useState` hook to track the state of the counter. */
 
-export function ClickCounter ({initialValue = 0}) {
-    const [count, setCounter] = useState(initialValue)
+export function ClickCounter (props) {
+    const [count, setCounter] = useState(props.initialValue)
+    
+/*useEffect 01: Add a side effect to the `ClickCounter` component from useState 01 that calls a `onCounterChange` function 
+with the current value of the counter every time value of the counter changes. The function should be received as a prop. */
+    useEffect(() => {
+        props.onCounterChange(count)
+    }, [count, props])
+    
 
     function handleCounterIncrement() {
         setCounter(count => count + 1)
