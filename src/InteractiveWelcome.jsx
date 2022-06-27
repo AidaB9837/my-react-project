@@ -24,8 +24,7 @@ export class InteractiveWelcome extends React.Component {
             name="name"
             value={this.state.name}
             onChange={this.handleInputChange}
-            placeholder="Write your username"
-            />
+            placeholder="Write your username"/>
         <Welcome name={this.state.name}/>
         </>
     }
