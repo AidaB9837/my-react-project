@@ -50,7 +50,7 @@ export class App extends React.Component {
                         <Hello />
                         <Welcome name="Jacopo" age={24}/>
                         <Counter />  
-                        <ClickCounter initialValue={0} onCounterChange={onCounterChange}/>  
+                        <ClickCounter onCounterChange={onCounterChange}/>  
                         <ClickTracker />  
                         <InteractiveWelcome />   
                         <Login />  
