@@ -46,7 +46,7 @@ with the current value of the counter every time value of the counter changes. T
     
 
     function handleCounterIncrement() {
-        setCounter(count => count + 1)
+        setCounter(c => c + 1)
     }
 
     return(
