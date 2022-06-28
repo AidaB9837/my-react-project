@@ -13,6 +13,7 @@ import { Container } from "./Container"
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
+import { GithubUser } from "./GithubUser";
 
 const items = [
     {id: 1, name: 'Red'},
@@ -69,7 +70,8 @@ export class App extends React.Component {
                             )}}
                         </TodoList>
                         <Container title={<h1>Container</h1>}/>
-                        <Sum number={[1,2,3,4,5]}/>         
+                        <Sum number={[1,2,3,4,5]}/>   
+                        <GithubUser username="AidaB9837"/>    
                 </div>        
     }
 }

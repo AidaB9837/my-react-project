@@ -1,11 +1,11 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 // import { CounterDisplay } from "./CounterDisplay"
 
 // /*State 01: Create a `Counter` class component with an internal state containing a `count` property, initialized to `0`.
 // The `Counter` component should render the `count` property within an `h1` tag, and the `count` property should be incremented by `1` every second;*/
 
 // export class Counter extends React.Component{
-// // Start Mounting Phase
+//  Start Mounting Phase
 // /*Component Lifecycle 01: Modify the `Counter` component so that the interval is initialized 
 //  within the `componentDidMount` life cycle method instead of the constructor. Is the constructor still required? No*/
 //     state = {
