@@ -15,6 +15,7 @@ import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
+import { ControlledForm } from "./ControlledForm";
 
 const items = [
     {id: 1, name: 'Red'},
@@ -74,6 +75,7 @@ export class App extends React.Component {
                         <Sum number={[1,2,3,4,5]}/>   
                         <GithubUser username="AidaB9837"/>
                         <GithubUserList />
+                        <ControlledForm />
                 </div>        
     }
 }
