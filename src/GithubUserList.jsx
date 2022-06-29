@@ -2,8 +2,6 @@
 showing a GithubUser component for each username entered. 
 The usernames should be added to the array using an input field and a button. */
 
-//DA RIVEDERE INSIEME A JACOPO!!
-
 import { useState } from "react"
 import { GithubUser } from "./GithubUser"
 
@@ -20,14 +18,16 @@ export function GithubUserList() {
     }
 
     return <>
+                <h1>Github Users List:</h1>
                 <ul>
                     {usernames.map((name, index) =>
                     <li key={name + index}>
-                        <GithubUser />
+                        <GithubUser username={name}/>
                     </li>)}
                 </ul>
                 <input
                 type="text"
+                placeholder="Write here Github User"
                 value={newUser}
                 onChange={handleInputUsername}></input>
                 <button onClick={handleAddUsername}>Add New User</button>
