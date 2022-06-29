@@ -16,6 +16,7 @@ import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { ControlledForm } from "./ControlledForm";
+import { CarDetails } from "./CarDetails";
 
 const items = [
     {id: 1, name: 'Red'},
@@ -26,6 +27,12 @@ const items = [
 
 function onCounterChange(count){
     console.log(`The Counter is now: ${count}`)
+}
+
+const initialData = {
+    model: "BMW X4 G02",
+    year: 2021,
+    color: "Black"
 }
 
 //Components-03: Write a class component called App that renders the Hello component within a div tag.
@@ -76,6 +83,7 @@ export class App extends React.Component {
                         <GithubUser username="AidaB9837"/>
                         <GithubUserList />
                         <ControlledForm />
+                        <CarDetails initialData={initialData}/>
                 </div>        
     }
 }
