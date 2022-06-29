@@ -24,7 +24,6 @@ const items = [
     {id: 3, name: 'Green'},
     {id: 4, name: 'Blue'}
 ]
-
 function onCounterChange(count){
     console.log(`The Counter is now: ${count}`)
 }
@@ -40,7 +39,6 @@ export class App extends React.Component {
     state = {
         language: "en"
     }
-
     handleLanguageChange = (event) => {
         this.setState ({
             language: event.target.value
