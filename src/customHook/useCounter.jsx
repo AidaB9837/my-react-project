@@ -1,22 +1,22 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 
-/*Custom Hooks 01: Create a custom hook useCounter that keeps track of the state of a counter, 
-and returns the current value of the counter as well as three functions to increment, decrement and reset the counter.*/
+/*useCallback: Modify the useCounter custom hook from Custom Hooks 01 to use the useCallback to memoize the functions used to increment, 
+decrement and reset the counter. */
 
 export function useCounter(initialValue = 0) {
     const [counter, setCounter] = useState(initialValue)
 
-    function handleCounterIncrement(){
+    const handleCounterIncrement = useCallback(function handleCounterIncrement(){
         setCounter((c) => c + 1)
-    }
+    }, [])
 
-    function handleCounterDecrement() {
+    const handleCounterDecrement = useCallback(function handleCounterDecrement() {
         setCounter((c) => c - 1)
-    }
+    }, [])
 
-    function handleCounterReset() {
+    const handleCounterReset = useCallback(function handleCounterReset() {
         setCounter(initialValue)
-    }
+    }, [initialValue])
 
     return {
         counter: counter,
