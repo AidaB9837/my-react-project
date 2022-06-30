@@ -1,6 +1,6 @@
 import React from "react";
 import { Welcome } from "./Welcome"
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { ClickCounter } from "./ClickCounter"
 import { ShowGithubUser } from "./ShowGithubUser"
 
@@ -33,6 +33,12 @@ export function App() {
     // }
 /*React Router 02: Add a new Route to the /counter path that renders the Counter component from useState 01.*/
         return (
+            <>
+{/* React Router 04: Add three Links within the main App component and use them to navigate to all three routes. */}
+            <div>
+                <h1>Links to Navigate:</h1>
+                <Link to="/">Homepage</Link> <Link to="/counter">Counter</Link> <Link to="/users/:username">Github User</Link> <hr></hr>
+            </div>
             <Routes>
                 <Route path="/" element={<Welcome name="Jacopo"/>} />
                 <Route path="/counter" element={<ClickCounter />} />
@@ -40,5 +46,6 @@ export function App() {
                     <Route path=":username" element={<ShowGithubUser />} />
                 </Route>
             </Routes>
+            </>
         )
 }
