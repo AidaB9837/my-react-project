@@ -41,10 +41,10 @@ export function App() {
             </div>
             <Routes>
                 <Route path="/" element={<Welcome name="Jacopo"/>} />
-                <Route path="/counter" element={<ClickCounter />} />
-                <Route path="/users">
-                    <Route path=":username" element={<ShowGithubUser />} />
-                </Route>
+                <Route path="/counter" element={<ClickCounter />} />     
+                <Route path="/users/:username" element={<ShowGithubUser />} />
+{/* React Router 05: Add a Not Found route that renders when a user navigates to a path that does not exist. */}
+                <Route path="*" element={<p>Page Not Found</p>} />
             </Routes>
             </>
         )
