@@ -1,24 +1,12 @@
-import React from "react";
+import { useContext } from "react";
 import { LanguageContext } from "./LanguageContext";
 
-/*Context 02: Consume the `LanguageContext` within the `DisplayLanguage` component by using the context consumer, 
-and show the selected language in an `h1` tag.*/
-const String = {
-    en: {
-        currentLanguage: "You have selected the English language!"
-    },
-    
-    it: {
-        currentLanguage: "Hai selezionato la lingua Italiana!"
-    }
-}
+/*useContext: Rewrite the DisplayLanguage component from Context 02 to be a function component,
+ and access the LanguageContext through the useContext hook. */
 
-export class DisplayLanguage extends React.Component {
-    render() {
-        return <LanguageContext.Consumer>
-            {language => {
-                return <h1>{String[language].currentLanguage}</h1>
-            }}
-        </LanguageContext.Consumer>
-    }
+export function DisplayLanguage() {
+    const language = useContext(LanguageContext)
+    
+    return <h1>Current Language: {language}</h1>
+
 }

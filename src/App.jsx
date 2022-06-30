@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { Colors } from "./Colors";
@@ -18,39 +18,36 @@ import { GithubUserList } from "./GithubUserList";
 import { ControlledForm } from "./ControlledForm";
 import { CarDetails } from "./CarDetails";
 
-const items = [
-    {id: 1, name: 'Red'},
-    {id: 2, name: 'Yellow'},
-    {id: 3, name: 'Green'},
-    {id: 4, name: 'Blue'}
-]
-function onCounterChange(count){
-    console.log(`The Counter is now: ${count}`)
-}
 
-const initialData = {
-    model: "BMW X4 G02",
-    year: 2021,
-    color: "Black"
-}
-
-//Components-03: Write a class component called App that renders the Hello component within a div tag.
-export class App extends React.Component {
-    state = {
-        language: "en"
+export function App() {
+    const items = [
+        {id: 1, name: 'Red'},
+        {id: 2, name: 'Yellow'},
+        {id: 3, name: 'Green'},
+        {id: 4, name: 'Blue'}
+    ]
+    
+    function onCounterChange(count){
+        console.log(`The Counter is now: ${count}`)
     }
-    handleLanguageChange = (event) => {
-        this.setState ({
-            language: event.target.value
-        })
+    
+    const initialData = {
+        model: "BMW X4 G02",
+        year: 2021,
+        color: "Black"
     }
-    render() {
+    
+    const [language, setLanguage] = useState("en")
+    
+    function handleLanguageChange(event) {
+        setLanguage(event.target.value)
+    }
         return <div>      
-                    <select value={this.state.language} onChange={this.handleLanguageChange}>
+                    <select value={language} onChange={handleLanguageChange}>
                         <option value="en">English</option>
                         <option value="it">Italiano</option>
                     </select>
-                    <LanguageContext.Provider value={this.state.language}>
+                    <LanguageContext.Provider value={language}>
                         <DisplayLanguage />
                     </LanguageContext.Provider>
                         <Hello />
@@ -83,8 +80,8 @@ export class App extends React.Component {
                         <ControlledForm />
                         <CarDetails initialData={initialData}/>
                 </div>        
-    }
 }
+
 /*Components-08
 Can you use the `Hello` component more than once in the `App` component? What happens if you do?
 Yes, I can. If I do, I will see the `Hello` component as many time as I have inserted it into the `App` component.*/
