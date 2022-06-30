@@ -1,14 +1,17 @@
-import { useCounter } from "./customHook/useCounter";
+import React, { useState } from "react";
 
 export function ClickCounter ({initialValue = 0}) {
-    const {counter, onIncrement, onDecrement, onReset} = useCounter(initialValue)
+    const [count, setCounter] = useState(initialValue)
 
-    return (
+    function handleCounterIncrement() {
+        setCounter(count => count + 1)
+    }   
+
+    return(
         <div>
-            <h1>Click Counter: {counter}</h1>
-            <button onClick={onIncrement}>Increment</button>
-            <button onClick={onDecrement}>Decrement</button>
-            <button onClick={onReset}>Reset</button>
+            <h1>Click Counter: {count}</h1>
+            <button onClick={handleCounterIncrement}>Increment</button>
         </div>
-    )
+        )
+    
 }
