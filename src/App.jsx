@@ -2,6 +2,7 @@ import React from "react";
 import { Welcome } from "./Welcome"
 import { Route, Routes } from "react-router-dom";
 import { ClickCounter } from "./ClickCounter"
+import { ShowGithubUser } from "./ShowGithubUser"
 
 /*React Router 01: Create an App component that wraps a Routes component and add a single Route to the / path 
 that renders the Welcome component from Function Components 01, passing it a name prop.
@@ -35,6 +36,9 @@ export function App() {
             <Routes>
                 <Route path="/" element={<Welcome name="Jacopo"/>} />
                 <Route path="/counter" element={<ClickCounter />} />
+                <Route path="/users">
+                    <Route path=":username" element={<ShowGithubUser />} />
+                </Route>
             </Routes>
         )
 }
