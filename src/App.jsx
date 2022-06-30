@@ -17,6 +17,7 @@ import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { ControlledForm } from "./ControlledForm";
 import { CarDetails } from "./CarDetails";
+import { FilteredList } from "./FilteredList";
 
 
 export function App() {
@@ -42,6 +43,7 @@ export function App() {
     function handleLanguageChange(event) {
         setLanguage(event.target.value)
     }
+
         return <div>      
                     <select value={language} onChange={handleLanguageChange}>
                         <option value="en">English</option>
@@ -79,6 +81,7 @@ export function App() {
                         <GithubUserList />
                         <ControlledForm />
                         <CarDetails initialData={initialData}/>
+                        <FilteredList />
                 </div>        
 }
 
