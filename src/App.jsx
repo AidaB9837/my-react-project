@@ -48,6 +48,8 @@ Modify it so that instead of showing the GithubUser component for each username 
 it shows a link to a nested route that shows the ShowGithubUser component. 
 In doing so, remove the /users/:username route from the App component, and add a new nested route within the /users route. */}
                 <Route path="/userslist" element={<GithubUserList />}>
+{/* React Router 07: Add an index route to the GithubUserList route that shows the "Add a user and select it" message. */}
+                    <Route index element={<h1>Add new Github User & select it</h1>} />
                     <Route path="users/:username" element={<ShowGithubUser />} />
                 </Route>      
 
