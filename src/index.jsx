@@ -5,6 +5,7 @@ import './index.css'
 import { Root } from "./Root"
 import { incrementCounter } from "./state/CounterState"
 import { store } from "./state/Store"
+import { addTodo } from "./state/TodosState"
 
 //Components-04: Create a new `index.js` file within the `src` folder and render the `App` component using the `ReactDOM.render` method.
 /*
@@ -29,3 +30,15 @@ store.subscribe(() => {
 
 store.dispatch(incrementCounter(5))
 
+
+store.dispatch(addTodo({
+    id: 1,
+    title: "Go to the Sea",
+    completed: false
+}))
+
+store.dispatch(addTodo({
+    id: 2,
+    title: "Go out with Friends",
+    completed: true
+}))
