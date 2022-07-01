@@ -7,11 +7,11 @@ The API to query is https://api.github.com/users/${username}.*/
 
 
 export function GithubUser({username}){
-    const {data, error} = useGithubUser(username)
+    const {data, error, isLoading} = useGithubUser(username)
 
         return <div>
                     <h1>Github User:</h1>
-                    {!data && !error && <h3>Loading...</h3>}
+                    {isLoading && <h3>Loading...</h3>}
                     {error && <h3>An error has occured</h3>}
                     {data && <h2>{data.name}</h2>}
                     {data && <img src={data.avatar_url} alt="User Avatar"></img>}                   
