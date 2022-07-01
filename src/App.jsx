@@ -35,7 +35,7 @@ export function App() {
             <div>
                 <h1>Links to Navigate:</h1>
                 <Link to="/">Homepage</Link> | <Link to="/counter">Counter</Link> | 
-                <Link to="/userslist">Github User List</Link> | <Link to="githubuser">Github User</Link><hr></hr>
+                <Link to="/userslist"> Github User List</Link> | <Link to="githubuser">Github User</Link><hr></hr>
                 
             </div>
             <Routes>
@@ -45,7 +45,7 @@ export function App() {
                     <Route index element={<h1>Add new Github User & select it</h1>} />
                     <Route path="users/:username" element={<ShowGithubUser />} />
                 </Route>
-                <Route path="githubuser" element={<GithubUser username={null}/>} />      
+                <Route path="githubuser" element={<GithubUser username="AidaB9837"/>} />      
                 <Route path="*" element={<p>Page Not Found</p>} />
             </Routes>
             </>
