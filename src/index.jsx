@@ -3,9 +3,9 @@ import { StrictMode } from "react"
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { Root } from "./Root"
-import { incrementCounter } from "./state/CounterState"
+import { decrementCounter, incrementCounter, resetCounter } from "./state/CounterState"
 import { store } from "./state/Store"
-import { addTodo } from "./state/TodosState"
+import { addTodo, editTodo } from "./state/TodosState"
 
 //Components-04: Create a new `index.js` file within the `src` folder and render the `App` component using the `ReactDOM.render` method.
 /*
@@ -37,8 +37,14 @@ store.dispatch(addTodo({
     completed: false
 }))
 
+store.dispatch(decrementCounter(2))
+
 store.dispatch(addTodo({
     id: 2,
     title: "Go out with Friends",
     completed: true
 }))
+
+store.dispatch(resetCounter())
+
+store.dispatch(editTodo(1, {completed: true}))
